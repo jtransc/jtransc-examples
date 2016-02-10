@@ -94,10 +94,8 @@
                     <mainClass>example.Example</mainClass>
                     <!--<release>true</release>-->
                     <release>false</release>
-                    <!--
-                        <target>lime:js:program.js</target>
-                    -->
-                    <target>lime:swf:program.swf</target>
+                    <target>lime:js:program.js</target>
+                    <!--<target>lime:swf:program.swf</target>-->
                     <assets>
                         <asset>assets</asset>
                     </assets>
