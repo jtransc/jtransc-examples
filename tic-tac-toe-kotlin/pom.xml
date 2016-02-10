@@ -19,11 +19,11 @@
 
     <groupId>com.jtransc</groupId>
     <artifactId>jtransc-examples-tic-tac-toe-kotlin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.2</version>
 
     <properties>
         <kotlin.version>1.0.0-rc-1036</kotlin.version>
-        <jtransc.version>0.0.1</jtransc.version>
+        <jtransc.version>0.0.2</jtransc.version>
         <gdx.version>1.8.0</gdx.version>
     </properties>
 
@@ -51,12 +51,12 @@
         <dependency>
             <groupId>com.jtransc</groupId>
             <artifactId>jtransc-rt-core</artifactId>
-            <version>0.0.1</version>
+            <version>${jtransc.version}</version>
         </dependency>
         <dependency>
             <groupId>com.jtransc</groupId>
             <artifactId>jtransc-libgdx</artifactId>
-            <version>0.0.1</version>
+            <version>${jtransc.version}</version>
         </dependency>
         <dependency>
             <groupId>com.badlogicgames.gdx</groupId>
@@ -87,7 +87,7 @@
             <plugin>
                 <groupId>com.jtransc</groupId>
                 <artifactId>jtransc-maven-plugin</artifactId>
-                <version>0.0.1</version>
+                <version>${jtransc.version}</version>
                 <configuration>
                     <title>My Example</title>
                     <name>MyExample</name>
