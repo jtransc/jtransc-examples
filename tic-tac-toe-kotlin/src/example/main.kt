@@ -17,6 +17,9 @@
 package example
 
 import jtransc.*
+import jtransc.game.canvas.Canvas
+import jtransc.game.stage.Image
+import jtransc.game.stage.Stage
 
 object Example {
 	@JvmStatic fun main(args: Array<String>) {
