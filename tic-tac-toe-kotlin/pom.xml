@@ -92,7 +92,7 @@
                 <configuration>
                     <title>My Example</title>
                     <name>MyExample</name>
-                    <mainClass>example.Example</mainClass>
+                    <mainClass>example.ExampleJTransc</mainClass>
                     <!--<release>true</release>-->
                     <release>false</release>
                     <target>lime:js:program.js</target>

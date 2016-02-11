@@ -16,42 +16,38 @@
 
 package example
 
-import jtransc.*
-import jtransc.game.canvas.Canvas
+import JTranscLibgdx
+import jtransc.game.JTranscGame
 import jtransc.game.stage.Image
-import jtransc.game.stage.Stage
+
+object ExampleGdx {
+	@JvmStatic fun main(args: Array<String>) {
+		JTranscLibgdx.config();
+		Example.main(args)
+	}
+}
+
+object ExampleJTransc {
+	@JvmStatic fun main(args: Array<String>) {
+		Example.main(args)
+	}
+}
 
 object Example {
 	@JvmStatic fun main(args: Array<String>) {
-		val canvas = Canvas()
-		JTranscEventLoop.init {
-			println("Init")
-			println("JTransc version:" + JTranscVersion.getVersion())
-			println("Endian isLittleEndian:" + JTranscEndian.isLittleEndian())
-			println("Endian isBigEndian:" + JTranscEndian.isBigEndian())
-			val stage = Stage()
-			val root = stage.root
-			val texture = canvas.image("assets/jtransc.jpg", 200, 200)
-
-			//JTranscGC.disable()
-
-			val image = Image(texture, 0.5, 0.5).apply {
+		JTranscGame.init { game ->
+			val texture = game.image("assets/jtransc.jpg", 200, 200)
+			game.root.addChild(Image(texture, 0.5, 0.5).apply {
 				x = 256.0
 				y = 256.0
 				scaleX = 2.0
 				scaleY = 2.0
 				rotationDegrees = 45.0
-			}
-			root.addChild(image)
-
-			var lastTime = System.currentTimeMillis()
-			JTranscEventLoop.loop({
-				val currentTime = System.currentTimeMillis()
-				val elapsed = currentTime - lastTime
-				image.rotationDegrees += 0.1 * elapsed.toDouble()
-				lastTime = currentTime
-			}, {
-				stage.render(canvas)
+				alpha = 0.0
+				onUpdate.add { elapsed ->
+					rotationDegrees += 0.1 * elapsed.toDouble()
+					alpha += 0.001 * elapsed.toDouble()
+				}
 			})
 		}
 	}
