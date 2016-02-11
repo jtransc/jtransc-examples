@@ -17,25 +17,19 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <jtransc.version>0.0.3</jtransc.version>
+    </properties>
+
     <groupId>com.jtransc</groupId>
     <artifactId>jtransc-examples-hello-world</artifactId>
-    <version>0.0.2</version>
-
-    <properties>
-        <jtransc.version>0.0.2</jtransc.version>
-    </properties>
+    <version>0.0.1</version>
 
     <dependencies>
         <dependency>
             <groupId>com.jtransc</groupId>
             <artifactId>jtransc-rt-core</artifactId>
             <version>${jtransc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.jtransc</groupId>
-            <artifactId>jtransc-rt</artifactId>
-            <version>${jtransc.version}</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -45,7 +39,7 @@
             <plugin>
                 <groupId>com.jtransc</groupId>
                 <artifactId>jtransc-maven-plugin</artifactId>
-                <version>0.0.2</version>
+                <version>${jtransc.version}</version>
                 <configuration>
                     <mainClass>example.Test</mainClass>
                     <output>program.swf</output>
@@ -54,7 +48,6 @@
                 </configuration>
                 <executions><execution><goals><goal>jtransc</goal></goals></execution></executions>
             </plugin>
-
         </plugins>
     </build>
 </project>

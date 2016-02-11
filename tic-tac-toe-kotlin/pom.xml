@@ -23,7 +23,7 @@
 
     <properties>
         <kotlin.version>1.0.0-rc-1036</kotlin.version>
-        <jtransc.version>0.0.2</jtransc.version>
+        <jtransc.version>0.0.3</jtransc.version>
         <gdx.version>1.8.0</gdx.version>
     </properties>
 
@@ -47,12 +47,6 @@
             <groupId>com.jtransc</groupId>
             <artifactId>jtransc-rt-core</artifactId>
             <version>${jtransc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.jtransc</groupId>
-            <artifactId>jtransc-rt</artifactId>
-            <version>${jtransc.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.jtransc</groupId>

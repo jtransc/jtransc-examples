@@ -16,16 +16,14 @@
 
 package example
 
-import jtransc.JTranscEndian
-import jtransc.JTranscEventLoop
-import jtransc.JTranscGC
-import jtransc.JTranscRender
+import jtransc.*
 
 object Example {
 	@JvmStatic fun main(args: Array<String>) {
 		val canvas = Canvas()
 		JTranscEventLoop.init {
 			println("Init")
+			println("JTransc version:" + JTranscVersion.getVersion())
 			println("Endian isLittleEndian:" + JTranscEndian.isLittleEndian())
 			println("Endian isBigEndian:" + JTranscEndian.isBigEndian())
 			val stage = Stage()
