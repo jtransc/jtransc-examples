@@ -21,6 +21,24 @@
     <artifactId>jtransc-examples-hello-world</artifactId>
     <version>0.0.2</version>
 
+    <properties>
+        <jtransc.version>0.0.2</jtransc.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.jtransc</groupId>
+            <artifactId>jtransc-rt-core</artifactId>
+            <version>${jtransc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jtransc</groupId>
+            <artifactId>jtransc-rt</artifactId>
+            <version>${jtransc.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <sourceDirectory>src</sourceDirectory>
         <plugins>
