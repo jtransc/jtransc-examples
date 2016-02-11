@@ -23,7 +23,7 @@
 
     <properties>
         <kotlin.version>1.0.0-rc-1036</kotlin.version>
-        <jtransc.version>0.0.3</jtransc.version>
+        <jtransc.version>0.0.4-SNAPSHOT</jtransc.version>
         <gdx.version>1.8.0</gdx.version>
     </properties>
 
@@ -61,7 +61,7 @@
         </dependency>
         <dependency>
             <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-backend-lwjgl3</artifactId>
+            <artifactId>gdx-backend-lwjgl</artifactId>
             <version>${gdx.version}</version>
         </dependency>
         <dependency>
@@ -76,6 +76,7 @@
         <resources>
             <resource>
                 <directory>assets</directory>
+                <targetPath>assets</targetPath>
             </resource>
         </resources>
         <plugins>

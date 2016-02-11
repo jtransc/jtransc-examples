@@ -1,3 +1,16 @@
+This demo should work with plain java using libgdx, and with jtransc using haxe lime.
+
+## Run with Java
+
+You should run `example.ExampleGdx` class for example loading `pom.xml` in intelliJ and debug it there.
+
+Using a terminal:
+```
+mvn exec:java -Dexec.mainClass="example.ExampleGdx"
+```
+
+## Run with JTransc
+
 In order for this to work you must install maven and haxe.
 
 You can install haxe from here: [http://haxe.org/download/](http://haxe.org/download/)

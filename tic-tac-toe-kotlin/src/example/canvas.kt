@@ -108,7 +108,7 @@ class Context2D(val canvas: Canvas) {
 		val p2 = matrix.transform(x + 0, y + h)
 		val p3 = matrix.transform(x + w, y + h)
 
-		batches.quad(0, p0, p1, p2, p3, 0f, 0f, 1f, 1f)
+		batches.quad(0, p0, p1, p2, p3, 0f, 0f, 1f, 1f, -1, 0x7f7f7f7f)
 	}
 
 	companion object {
@@ -126,7 +126,7 @@ class Context2D(val canvas: Canvas) {
 		val p2 = matrix.transform(x + 0, y + h, t2)
 		val p3 = matrix.transform(x + w, y + h, t3)
 
-		batches.quad(i.base.id, p0, p1, p2, p3, i.tx0, i.ty0, i.tx1, i.ty1)
+		batches.quad(i.base.id, p0, p1, p2, p3, i.tx0, i.ty0, i.tx1, i.ty1, -1, 0x7f7f7f7f)
 	}
 }
 

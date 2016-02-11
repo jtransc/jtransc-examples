@@ -90,7 +90,7 @@ class BatchBuilder {
 		current.triangleCount = 0
 	}
 
-	fun quad(texture:Int, p0: Point, p1: Point, p2: Point, p3: Point, tx0: Float, ty0: Float, tx1: Float, ty1: Float) {
+	fun quad(texture:Int, p0: Point, p1: Point, p2: Point, p3: Point, tx0: Float, ty0: Float, tx1: Float, ty1: Float, color1:Int, color2:Int) {
 		if (current.texture != texture) {
 			flush()
 			current.texture = texture
@@ -105,29 +105,29 @@ class BatchBuilder {
 		Mem.sf32(vi +  1, p0.y.toFloat())
 		Mem.sf32(vi +  2, tx0)
 		Mem.sf32(vi +  3, ty0)
-		Mem.si32(vi +  4, 0)
-		Mem.si32(vi +  5, 0)
+		Mem.si32(vi +  4, color1)
+		Mem.si32(vi +  5, color2)
 
 		Mem.sf32(vi +  6, p1.x.toFloat())
 		Mem.sf32(vi +  7, p1.y.toFloat())
 		Mem.sf32(vi +  8, tx1)
 		Mem.sf32(vi +  9, ty0)
-		Mem.si32(vi + 10, 0)
-		Mem.si32(vi + 11, 0)
+		Mem.si32(vi + 10, color1)
+		Mem.si32(vi + 11, color2)
 
 		Mem.sf32(vi + 12, p2.x.toFloat())
 		Mem.sf32(vi + 13, p2.y.toFloat())
 		Mem.sf32(vi + 14, tx0)
 		Mem.sf32(vi + 15, ty1)
-		Mem.si32(vi + 16, 0)
-		Mem.si32(vi + 17, 0)
+		Mem.si32(vi + 16, color1)
+		Mem.si32(vi + 17, color2)
 
 		Mem.sf32(vi + 18, p3.x.toFloat())
 		Mem.sf32(vi + 19, p3.y.toFloat())
 		Mem.sf32(vi + 20, tx1)
 		Mem.sf32(vi + 21, ty1)
-		Mem.si32(vi + 22, 0)
-		Mem.si32(vi + 23, 0)
+		Mem.si32(vi + 22, color1)
+		Mem.si32(vi + 23, color2)
 
 		i[ii + 0] = (vii + 0).toShort()
 		i[ii + 1] = (vii + 1).toShort()

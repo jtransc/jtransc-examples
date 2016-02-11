@@ -28,7 +28,7 @@ object Example {
 			println("Endian isBigEndian:" + JTranscEndian.isBigEndian())
 			val stage = Stage()
 			val root = stage.root
-			val texture = canvas.image("assets/jtransc.png", 200, 200)
+			val texture = canvas.image("assets/jtransc.jpg", 200, 200)
 
 			//JTranscGC.disable()
 
@@ -51,12 +51,5 @@ object Example {
 				stage.render(canvas)
 			})
 		}
-	}
-}
-
-object ExampleGdx {
-	@JvmStatic fun main(args: Array<String>) {
-		JTranscLibgdx.config();
-		Example.main(args)
 	}
 }
