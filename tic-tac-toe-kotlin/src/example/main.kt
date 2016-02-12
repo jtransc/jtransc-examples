@@ -18,7 +18,10 @@ package example
 
 import JTranscLibgdx
 import jtransc.game.JTranscGame
+import jtransc.game.event.KeyEvent
+import jtransc.game.event.MouseEvent
 import jtransc.game.stage.Image
+import jtransc.game.ui.Keys
 
 object ExampleGdx {
 	@JvmStatic fun main(args: Array<String>) {
@@ -45,9 +48,29 @@ object Example {
 				rotationDegrees = 45.0
 				alpha = 0.0
 				onUpdate.add { elapsed ->
+					//println("${game.mouseX}, ${game.mouseY}")
 					rotationDegrees += 0.1 * elapsed.toDouble()
 					alpha += 0.001 * elapsed.toDouble()
+					if (game.isPressing(Keys.LEFT)) x -= 10
+					if (game.isPressing(Keys.RIGHT)) x += 10
+					if (game.isPressing(Keys.UP)) y -= 10
+					if (game.isPressing(Keys.DOWN)) y += 10
 				}
+				/*
+				addEventListener(MouseEvent::class.java) {
+					x = it.position.x
+					y = it.position.y
+				}
+				*/
+				/*
+				addEventListener(KeyEvent::class.java) {
+					if (it.type == KeyEvent.Type.DOWN) {
+						println("Pressed: ${it.keyCode}")
+					} else {
+						println("Released: ${it.keyCode}")
+					}
+				}
+				*/
 			})
 		}
 	}
