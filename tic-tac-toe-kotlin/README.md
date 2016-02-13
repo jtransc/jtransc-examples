@@ -1,12 +1,12 @@
 This demo should work with plain java using libgdx, and with jtransc using haxe lime.
 
-## Run with Java
+## Run with plain JVM
 
-You should run `example.ExampleGdx` class for example loading `pom.xml` in intelliJ and debug it there.
+You should run `com.jtransc.examples.tictactoe.TicTacToeGdx` class for example loading `pom.xml` in intelliJ and debug it there.
 
 Using a terminal:
 ```
-mvn exec:java -Dexec.mainClass="example.ExampleGdx"
+mvn exec:java -Dexec.mainClass="com.jtransc.examples.tictactoe.TicTacToeGdx"
 ```
 
 ## Run with JTransc
@@ -29,12 +29,10 @@ mvn package
 ```
 
 Will output:
-``/target/jtransc-haxe/out/html5/bin`
+`/target/jtransc-haxe/out/html5/bin/index.html`
+`/target/jtransc-haxe/out/flash/bin/TicTacToeJTranscKotlin.swf`
+`/target/jtransc-haxe/out/android/bin/bin/TicTacToeJTranscKotlin-debug.apk`
 
 ## HTML5 version
 Create an http_server there and open `index.html` at the browser. And you will see the demo. kotlin -> jtransc -> haxe/lime -> webgl
 If you don't have a simple web server, you can go to `/target/jtransc-haxe` folder and execute `lime test html5`
-
-## Flash version
-In `pom.xml`, change `<target>lime:js:program.js</target>` with `<target>lime:swf:program.swf</target>`
-to compile swf version.
