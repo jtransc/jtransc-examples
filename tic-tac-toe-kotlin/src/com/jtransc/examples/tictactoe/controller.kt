@@ -1,7 +1,4 @@
-package example
-
-
-
+package com.jtransc.examples.tictactoe
 
 object Bot {
 	fun playTurn(game: Model.Game, chip: ChipType) {
@@ -10,7 +7,7 @@ object Bot {
 	}
 }
 
-class IngameScene(val ingameView: Views.Ingame) {
+class IngameController(val ingameView: Views.Ingame) {
 	val game = Model.Game()
 
 	fun start() {

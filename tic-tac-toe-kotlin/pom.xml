@@ -17,8 +17,8 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jtransc</groupId>
-    <artifactId>jtransc-examples-tic-tac-toe-kotlin</artifactId>
+    <groupId>com.jtransc.examples</groupId>
+    <artifactId>tic-tac-toe-kotlin</artifactId>
     <version>0.0.2</version>
 
     <properties>
@@ -100,15 +100,20 @@
                 <artifactId>jtransc-maven-plugin</artifactId>
                 <version>${jtransc.version}</version>
                 <configuration>
-                    <title>My Example</title>
-                    <name>MyExample</name>
-                    <mainClass>example.ExampleJTransc</mainClass>
-                    <!--<release>true</release>-->
-                    <release>false</release>
+                    <title>Tic-Tac-Toe JTransc Kotlin</title>
+                    <name>TicTacToeJTranscKotlin</name>
+                    <mainClass>com.jtransc.examples.tictactoe.TicTacToeTransc</mainClass>
+                    <icon>assets/icon.png</icon>
+                    <packagePath>com.jtransc.examples.tictactoe</packagePath>
+                    <company>JTransc</company>
+
+                    <release>true</release>
 
                     <targets>
-                      <param>lime:swf:program.swf</param>
-                      <param>lime:js:program.js</param>
+                      <param>lime:swf</param>
+                      <param>lime:js</param>
+                      <param>lime:neko</param>
+                      <param>lime:android</param>
                     </targets>
 
                     <assets>

@@ -1,4 +1,4 @@
-package example
+package com.jtransc.examples.tictactoe
 
 import jtransc.game.stage.Image
 import jtransc.game.stage.Sprite
