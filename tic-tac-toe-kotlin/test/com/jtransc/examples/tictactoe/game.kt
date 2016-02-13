@@ -1,9 +1,10 @@
-import example.ChipType
-import example.Model
+package com.jtransc.examples.tictactoe
+
 import org.junit.Assert.assertEquals
+import org.junit.Test
 
 class GameTest {
-	@org.junit.Test
+	@Test
 	fun testIntegrationSimpleGame() {
 		val game = Model.Game()
 		assertEquals(true, game.isEmpty(0, 0))
