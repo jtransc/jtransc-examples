@@ -105,12 +105,12 @@
                     <mainClass>example.ExampleJTransc</mainClass>
                     <!--<release>true</release>-->
                     <release>false</release>
-                    <!--
-                    <target>lime:js:program.js</target>
-                  -->
-                  <target>lime:swf:program.swf</target>
-	                   <!--<target>lime:js:program.js</target>-->
-                    <!--<target>lime:swf:program.swf</target>-->
+
+                    <targets>
+                      <param>lime:swf:program.swf</param>
+                      <param>lime:js:program.js</param>
+                    </targets>
+
                     <assets>
                         <asset>assets</asset>
                     </assets>
