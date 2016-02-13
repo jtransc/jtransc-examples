@@ -4,3 +4,4 @@
 *.iws
 *.swf
 /*/target
+*.log
