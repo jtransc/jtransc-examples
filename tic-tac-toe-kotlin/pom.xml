@@ -19,12 +19,12 @@
 
     <groupId>com.jtransc.examples</groupId>
     <artifactId>tic-tac-toe-kotlin</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
 
     <properties>
         <kotlin.version>1.0.0</kotlin.version>
-        <jtransc.version>0.0.4</jtransc.version>
-        <gdx.version>1.8.0</gdx.version>
+        <jtransc.version>0.0.5</jtransc.version>
+        <gdx.version>1.9.2</gdx.version>
     </properties>
 
     <dependencies>
@@ -71,6 +71,20 @@
             <version>${gdx.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <!--
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx-backend-lwjgl3</artifactId>
+            <version>${gdx.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx-backend-jglfw</artifactId>
+            <version>${gdx.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        -->
         <dependency>
             <groupId>com.badlogicgames.gdx</groupId>
             <artifactId>gdx-platform</artifactId>

@@ -8,6 +8,7 @@ object Bot {
 }
 
 class IngameController(val ingameView: Views.Ingame) {
+	private val assets = ingameView.assets
 	val game = Model.Game()
 
 	fun start() {
@@ -28,6 +29,8 @@ class IngameController(val ingameView: Views.Ingame) {
 			cell.mouse.onClick.add {
 				if (game.isEmpty(x, y)) {
 					game[x, y] = ChipType.O
+
+					assets.beep.play()
 
 					Bot.playTurn(game, ChipType.X)
 				}
