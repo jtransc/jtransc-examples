@@ -19,11 +19,11 @@
 
     <groupId>com.jtransc.examples</groupId>
     <artifactId>tic-tac-toe-kotlin</artifactId>
-    <version>0.0.5</version>
+    <version>0.1.0</version>
 
     <properties>
         <kotlin.version>1.0.0</kotlin.version>
-        <jtransc.version>0.0.5</jtransc.version>
+        <jtransc.version>0.1.0</jtransc.version>
         <gdx.version>1.9.2</gdx.version>
     </properties>
 
@@ -49,13 +49,23 @@
             <version>${jtransc.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.jtransc</groupId>
-            <artifactId>jtransc-libgdx</artifactId>
+            <groupId>com.jtransc.media</groupId>
+            <artifactId>jtransc-media-game</artifactId>
             <version>${jtransc.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.jtransc</groupId>
-            <artifactId>jtransc-game</artifactId>
+            <groupId>com.jtransc.media</groupId>
+            <artifactId>jtransc-media-libgdx</artifactId>
+            <version>${jtransc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jtransc.media</groupId>
+            <artifactId>jtransc-media-lime</artifactId>
+            <version>${jtransc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jtransc.media</groupId>
+            <artifactId>jtransc-media-core</artifactId>
             <version>${jtransc.version}</version>
         </dependency>
         <dependency>
