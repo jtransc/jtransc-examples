@@ -18,12 +18,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <jtransc.version>0.1.0</jtransc.version>
+        <jtransc.version>0.1.1</jtransc.version>
     </properties>
 
     <groupId>com.jtransc</groupId>
     <artifactId>jtransc-examples-hello-world</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 
     <dependencies>
         <dependency>
