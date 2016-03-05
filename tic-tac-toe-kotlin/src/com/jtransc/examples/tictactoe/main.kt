@@ -18,7 +18,7 @@ object TicTacToeTransc {
 
 object TicTacToe {
 	@JvmStatic fun main(args: Array<String>) {
-		JTranscGame.init(640, 480) { game ->
+		JTranscGame.init(512, 512) { game ->
 			val ingameScene = IngameController(Views.Ingame(GameAssets(game)))
 			ingameScene.start()
 			game.root.addChild(ingameScene.ingameView)

@@ -136,8 +136,10 @@
                     <targets>
                       <param>lime:swf</param>
                       <param>lime:js</param>
+			<!--
                       <param>lime:neko</param>
                       <param>lime:android</param>
+			-->
                     </targets>
 
                     <assets>
