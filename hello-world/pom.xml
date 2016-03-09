@@ -18,12 +18,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <jtransc.version>0.1.2</jtransc.version>
+        <jtransc.version>0.1.3</jtransc.version>
     </properties>
 
     <groupId>com.jtransc</groupId>
     <artifactId>jtransc-examples-hello-world</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
 
     <dependencies>
         <dependency>
@@ -44,8 +44,13 @@
                     <mainClass>example.Test</mainClass>
                     <release>true</release>
                     <targets>
+			<!--
+			-->
+                        <param>haxe:java:program.java</param>
+                        <param>haxe:cs:program.csharp</param>
                         <param>haxe:as3:program.swf</param>
                         <param>haxe:js:program.js</param>
+                        <param>haxe:php:program.php</param>
                     </targets>
                 </configuration>
                 <executions><execution><goals><goal>jtransc</goal></goals></execution></executions>
