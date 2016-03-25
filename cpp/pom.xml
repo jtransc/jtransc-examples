@@ -18,12 +18,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <jtransc.version>0.1.4</jtransc.version>
+        <jtransc.version>0.1.5</jtransc.version>
     </properties>
 
     <groupId>com.jtransc</groupId>
     <artifactId>jtransc-examples-cpp</artifactId>
-    <version>0.1.4</version>
+    <version>0.1.5</version>
 
     <dependencies>
         <dependency>
