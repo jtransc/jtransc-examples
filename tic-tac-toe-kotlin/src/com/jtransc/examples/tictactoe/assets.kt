@@ -3,7 +3,7 @@ package com.jtransc.examples.tictactoe
 import jtransc.game.JTranscGame
 
 class GameAssets(game: JTranscGame) {
-	val beep = game.sound("assets/beep.wav")
+	val beep = game.sound("assets/beep.mp3")
 	
 	private val atlas = game.image("assets/spritesheet.png", 512, 512)
 	val board = atlas.slice(128, 0, 128 * 3, 128 * 3)
