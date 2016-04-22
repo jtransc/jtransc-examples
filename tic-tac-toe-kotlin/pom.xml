@@ -19,11 +19,11 @@
 
     <groupId>com.jtransc.examples</groupId>
     <artifactId>tic-tac-toe-kotlin</artifactId>
-    <version>0.1.5</version>
+    <version>0.2.0</version>
 
     <properties>
-        <kotlin.version>1.0.1</kotlin.version>
-        <jtransc.version>0.1.5</jtransc.version>
+        <kotlin.version>1.0.1-2</kotlin.version>
+        <jtransc.version>0.2.0</jtransc.version>
         <gdx.version>1.9.2</gdx.version>
     </properties>
 
@@ -134,9 +134,9 @@
                     <release>true</release>
 
                     <targets>
-                      <param>lime:swf</param>
                       <param>lime:js</param>
 			<!--
+                      <param>lime:swf</param>
                       <param>lime:neko</param>
                       <param>lime:android</param>
 			-->
