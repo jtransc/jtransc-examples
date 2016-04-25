@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <jtransc.version>0.1.5</jtransc.version>
+        <jtransc.version>0.2.0</jtransc.version>
     </properties>
 
     <build>

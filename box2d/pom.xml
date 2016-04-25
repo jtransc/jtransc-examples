@@ -22,7 +22,7 @@
     </properties>
 
     <groupId>com.jtransc</groupId>
-    <artifactId>jtransc-examples-cpp</artifactId>
+    <artifactId>jtransc-examples-box2d</artifactId>
     <version>0.2.0</version>
 
     <dependencies>
@@ -31,15 +31,15 @@
             <artifactId>jtransc-rt-core</artifactId>
             <version>${jtransc.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.dyn4j</groupId>
+            <artifactId>dyn4j</artifactId>
+            <version>3.2.1</version>
+        </dependency>
     </dependencies>
 
     <build>
         <sourceDirectory>src</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>assets</directory>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>com.jtransc</groupId>
@@ -49,7 +49,15 @@
                     <mainClass>example.Test</mainClass>
                     <release>true</release>
                     <targets>
-                        <param>haxe:cpp:program.cpp</param>
+			<!--
+                        <param>haxe:java:program.java</param>
+                        <param>haxe:cs:program.csharp</param>
+                        <param>haxe:as3:program.swf</param>
+                        <param>haxe:php:program.php</param>
+                        <param>haxe:python:program.py</param>
+                        <param>haxe:neko:program.n</param>
+			-->
+                        <param>haxe:js:program.js</param>
                     </targets>
                 </configuration>
                 <executions><execution><goals><goal>jtransc</goal></goals></execution></executions>

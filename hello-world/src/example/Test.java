@@ -1,7 +1,7 @@
 package example;
 
-import jtransc.JTranscSystem;
-import jtransc.JTranscVersion;
+import com.jtransc.JTranscSystem;
+import com.jtransc.JTranscVersion;
 
 public class Test {
     static public void main(String[] args) {
