@@ -1,7 +1,7 @@
 package com.jtransc.examples.tictactoe
 
-import jtransc.game.stage.Image
-import jtransc.game.stage.Sprite
+import com.jtransc.game.stage.Image
+import com.jtransc.game.stage.Sprite
 
 object Views {
 	class Board(val assets: GameAssets) : Sprite() {
@@ -41,6 +41,7 @@ object Views {
 				}))
 			}
 		}
-		fun cell(x:Int, y:Int) = cells[y][x]
+
+		fun cell(x: Int, y: Int) = cells[y][x]
 	}
 }

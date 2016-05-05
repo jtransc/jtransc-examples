@@ -1,7 +1,7 @@
 package com.jtransc.examples.tictactoe
 
-import jtransc.game.math.IPoint
-import jtransc.game.util.Signal
+import com.jtransc.game.math.IPoint
+import com.jtransc.game.util.Signal
 
 object Model {
 	class Cell(val x: Int, val y: Int) {
@@ -12,7 +12,9 @@ object Model {
 
 	interface Result {
 		object PLAYING : Result
+
 		object DRAW : Result
+
 		data class WIN(val cells: List<Cell>) : Result
 	}
 
@@ -35,7 +37,7 @@ object Model {
 			if (result != Result.PLAYING) onGameFinished.dispatch(result)
 		}
 
-		fun checkResult():Result {
+		fun checkResult(): Result {
 			return if (hasWin()) {
 				Result.WIN(getWin()!!)
 			} else if (isBoardFull()) {

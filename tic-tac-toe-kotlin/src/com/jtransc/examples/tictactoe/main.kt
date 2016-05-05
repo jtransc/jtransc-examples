@@ -1,6 +1,8 @@
 package com.jtransc.examples.tictactoe
 
-import jtransc.game.JTranscGame
+import com.jtransc.game.JTranscGame
+import com.jtransc.media.libgdx.JTranscLibgdx
+import com.jtransc.media.lime.JTranscLime
 
 object TicTacToeGdx {
 	@JvmStatic fun main(args: Array<String>) {

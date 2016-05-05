@@ -19,11 +19,11 @@
 
     <groupId>com.jtransc.examples</groupId>
     <artifactId>tic-tac-toe-kotlin</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
 
     <properties>
         <kotlin.version>1.0.1-2</kotlin.version>
-        <jtransc.version>0.2.0</jtransc.version>
+        <jtransc.version>0.2.1</jtransc.version>
         <gdx.version>1.9.2</gdx.version>
     </properties>
 
@@ -145,6 +145,8 @@
                     <assets>
                         <asset>assets</asset>
                     </assets>
+
+                    <minimizeNames>true</minimizeNames>
                 </configuration>
                 <executions><execution><goals><goal>jtransc</goal></goals></execution></executions>
             </plugin>
