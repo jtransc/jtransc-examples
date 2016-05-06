@@ -5,3 +5,4 @@
 *.swf
 /*/target
 *.log
+*.versionsBackup

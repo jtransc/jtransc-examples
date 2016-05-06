@@ -16,14 +16,16 @@
 
 <project>
     <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
 
-    <properties>
-        <jtransc.version>0.2.0</jtransc.version>
-    </properties>
+    <parent>
+        <groupId>com.jtransc.examples</groupId>
+        <artifactId>jtransc-examples</artifactId>
+        <version>0.2.2</version>
+        <relativePath>..</relativePath>
+    </parent>
 
-    <groupId>com.jtransc</groupId>
     <artifactId>jtransc-examples-hello-world</artifactId>
-    <version>0.2.0</version>
 
     <dependencies>
         <dependency>
