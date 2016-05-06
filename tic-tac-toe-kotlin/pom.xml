@@ -95,11 +95,11 @@
                     <release>true</release>
 
                     <targets>
-                        <param>lime:js</param>
-                        <param>lime:swf</param>
+                        <param>haxe:js</param>
+                        <param>haxe:swf</param>
 			<!--
-                      <param>lime:neko</param>
-                      <param>lime:android</param>
+                      <param>haxe:neko</param>
+                      <param>haxe:android</param>
 			-->
                     </targets>
 
