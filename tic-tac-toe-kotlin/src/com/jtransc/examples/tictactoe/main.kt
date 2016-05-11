@@ -1,6 +1,7 @@
 package com.jtransc.examples.tictactoe
 
 import com.jtransc.game.JTranscGame
+import com.jtransc.kotlin.JTranscKotlinReflectStripper
 import com.jtransc.media.libgdx.JTranscLibgdx
 import com.jtransc.media.lime.JTranscLime
 
@@ -20,6 +21,7 @@ object TicTacToeTransc {
 
 object TicTacToe {
 	@JvmStatic fun main(args: Array<String>) {
+		JTranscKotlinReflectStripper.init()
 		JTranscGame.init(512, 512) { game ->
 			val ingameScene = IngameController(Views.Ingame(GameAssets(game)))
 			ingameScene.start()

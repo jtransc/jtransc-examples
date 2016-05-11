@@ -25,7 +25,7 @@
 
     <groupId>com.jtransc.examples</groupId>
     <artifactId>jtransc-examples</artifactId>
-    <version>0.2.2</version>
+    <version>0.2.5</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -36,4 +36,12 @@
         <module>inception</module>
         <module>tic-tac-toe-kotlin</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.jtransc</groupId>
+            <artifactId>jtransc-rt-core</artifactId>
+            <version>${jtransc.version}</version>
+        </dependency>
+    </dependencies>
 </project>

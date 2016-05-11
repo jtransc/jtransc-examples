@@ -21,19 +21,11 @@
     <parent>
         <groupId>com.jtransc.examples</groupId>
         <artifactId>jtransc-examples</artifactId>
-        <version>0.2.2</version>
+        <version>0.2.5</version>
         <relativePath>..</relativePath>
     </parent>
 
     <artifactId>jtransc-examples-cpp</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.jtransc</groupId>
-            <artifactId>jtransc-rt-core</artifactId>
-            <version>${jtransc.version}</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <sourceDirectory>src</sourceDirectory>

@@ -21,7 +21,7 @@
     <parent>
         <groupId>com.jtransc.examples</groupId>
         <artifactId>jtransc-examples</artifactId>
-        <version>0.2.2</version>
+        <version>0.2.5</version>
         <relativePath>..</relativePath>
     </parent>
 
@@ -54,11 +54,11 @@
 			<!--
                         <param>haxe:java:program.java</param>
                         <param>haxe:cs:program.csharp</param>
-                        <param>haxe:as3:program.swf</param>
                         <param>haxe:php:program.php</param>
                         <param>haxe:python:program.py</param>
                         <param>haxe:neko:program.n</param>
 			-->
+                        <param>haxe:as3:program.swf</param>
                         <param>haxe:js:program.js</param>
                     </targets>
                 </configuration>

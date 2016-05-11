@@ -1,7 +1,7 @@
+import com.jtransc.JTranscSystem;
+import com.jtransc.ffi.StdCall;
 import com.sun.jna.Library;
 import com.sun.jna.Native;
-import jtransc.JTranscSystem;
-import jtransc.ffi.StdCall;
 
 // https://msdn.microsoft.com/en-us/library/windows/desktop/aa383751(v=vs.85).aspx
 public class BeepExample {
