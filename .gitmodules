@@ -4,3 +4,6 @@
 [submodule "libgdx/cuboc/libgdx-demo-cuboc"]
 	path = libgdx/cuboc/libgdx-demo-cuboc
 	url = https://github.com/libgdx/libgdx-demo-cuboc.git
+[submodule "libgdx/metagun/libgdx-demo-metagun"]
+	path = libgdx/metagun/libgdx-demo-metagun
+	url = https://github.com/libgdx/libgdx-demo-metagun.git
