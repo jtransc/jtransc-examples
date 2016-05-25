@@ -33,10 +33,13 @@ repositories {
 
 dependencies {
 	jtransc "com.jtransc.gdx:gdx-backend-jtransc:$jtranscVersion"
+	jtransc "com.jtransc.gdx:gdx-box2d-jtransc:$jtranscVersion"
+
 	compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$libgdxVersion"
 	compile "com.badlogicgames.gdx:gdx-platform:$libgdxVersion:natives-desktop"
-    compile "com.badlogicgames.gdx:gdx-box2d-gwt:$libgdxVersion"
+    //compile "com.badlogicgames.gdx:gdx-box2d-gwt:$libgdxVersion"
     compile "com.badlogicgames.gdx:gdx-box2d:$libgdxVersion"
+	compile "com.badlogicgames.gdx:gdx-box2d-platform:$libgdxVersion:natives-desktop"
 
 	testCompile group: 'junit', name: 'junit', version: '4.+'
 }

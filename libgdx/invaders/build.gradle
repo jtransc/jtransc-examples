@@ -33,6 +33,8 @@ repositories {
 
 dependencies {
 	jtransc "com.jtransc.gdx:gdx-backend-jtransc:$jtranscVersion"
+	jtransc "com.jtransc.gdx:gdx-controllers-jtransc:$jtranscVersion"
+
 	compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$libgdxVersion"
 	compile "com.badlogicgames.gdx:gdx-platform:$libgdxVersion:natives-desktop"
 	compile "com.badlogicgames.gdx:gdx-controllers-desktop:$libgdxVersion"
