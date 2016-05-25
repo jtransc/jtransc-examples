@@ -7,3 +7,6 @@
 [submodule "libgdx/metagun/libgdx-demo-metagun"]
 	path = libgdx/metagun/libgdx-demo-metagun
 	url = https://github.com/libgdx/libgdx-demo-metagun.git
+[submodule "libgdx/invaders/libgdx-demo-invaders"]
+	path = libgdx/invaders/libgdx-demo-invaders
+	url = https://github.com/libgdx/libgdx-demo-invaders.git

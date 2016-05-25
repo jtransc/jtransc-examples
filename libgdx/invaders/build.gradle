@@ -1,0 +1,65 @@
+apply plugin: "java"
+apply plugin: 'application'
+apply plugin: "jtransc"
+
+mainClassName = "com.badlogic.invaders.desktop.DesktopLauncher"
+
+sourceSets.main {
+	java {
+		srcDirs = [
+            'libgdx-demo-invaders/core/src',
+            'libgdx-demo-invaders/desktop/src' //emulates lwjgl
+        ]
+	}
+	resources {
+		srcDir 'libgdx-demo-invaders/android/assets'
+	}
+}
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	jtransc "com.jtransc.gdx:gdx-backend-jtransc:$jtranscVersion"
+	compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$libgdxVersion"
+	compile "com.badlogicgames.gdx:gdx-platform:$libgdxVersion:natives-desktop"
+	compile "com.badlogicgames.gdx:gdx-controllers-desktop:$libgdxVersion"
+	compile "com.badlogicgames.gdx:gdx-controllers-platform:$libgdxVersion:natives-desktop"
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jtransc {
+	// Optional properties (https://github.com/jtransc/jtransc/blob/master/jtransc-gradle-plugin/src/com/jtransc/gradle/JTranscExtension.kt)
+	title = "Invaders"
+	name = "Invaders"
+	version = "0.0.1"
+	company = "Mojang"
+	package_ = "com.jtransc.gdx.examples"
+	embedResources = true
+	assets = ['libgdx-demo-invaders/android/assets']
+	vsync = true
+	relooper = true
+	minimizeNames = false
+	analyzer = false
+
+	customTarget("cpp", "haxe:cpp", "exe")
+	customTarget("windows", "haxe:windows", "exe")
+	customTarget("linux", "haxe:linux", "bin")
+	customTarget("mac", "haxe:mac", "app")
+	customTarget("android", "haxe:android", "apk")
+	customTarget("ios", "haxe:ios", "ipa")
+	customTarget("tizen", "haxe:tizen", "app")
+	customTargetMinimized("html5", "haxe:html5", "js")
+}
