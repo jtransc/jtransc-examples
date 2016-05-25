@@ -10,3 +10,6 @@
 [submodule "libgdx/invaders/libgdx-demo-invaders"]
 	path = libgdx/invaders/libgdx-demo-invaders
 	url = https://github.com/libgdx/libgdx-demo-invaders.git
+[submodule "libgdx/vector-pinball/libgdx-demo-vector-pinball"]
+	path = libgdx/vector-pinball/libgdx-demo-vector-pinball
+	url = https://github.com/libgdx/libgdx-demo-vector-pinball

@@ -1,0 +1,66 @@
+apply plugin: "java"
+apply plugin: 'application'
+apply plugin: "jtransc"
+
+mainClassName = "com.dozingcatsoftware.bouncy.desktop.DesktopLauncher"
+
+sourceSets.main {
+	java {
+		srcDirs = [
+            'libgdx-demo-vector-pinball/core/src',
+            'libgdx-demo-vector-pinball/desktop/src' //emulates lwjgl
+        ]
+	}
+	resources {
+		srcDir 'libgdx-demo-vector-pinball/android/assets'
+	}
+}
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	jtransc "com.jtransc.gdx:gdx-backend-jtransc:$jtranscVersion"
+	compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$libgdxVersion"
+	compile "com.badlogicgames.gdx:gdx-platform:$libgdxVersion:natives-desktop"
+    compile "com.badlogicgames.gdx:gdx-box2d-gwt:$libgdxVersion"
+    compile "com.badlogicgames.gdx:gdx-box2d:$libgdxVersion"
+
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jtransc {
+	// Optional properties (https://github.com/jtransc/jtransc/blob/master/jtransc-gradle-plugin/src/com/jtransc/gradle/JTranscExtension.kt)
+	title = "Vector Pinball"
+	name = "VectorPinball"
+	version = "0.0.1"
+	company = "Badlogic"
+	package_ = "com.jtransc.gdx.examples"
+	embedResources = true
+	assets = ['libgdx-demo-vector-pinball/android/assets']
+	vsync = true
+	relooper = true
+	minimizeNames = false
+	analyzer = false
+
+	customTarget("cpp", "haxe:cpp", "exe")
+	customTarget("windows", "haxe:windows", "exe")
+	customTarget("linux", "haxe:linux", "bin")
+	customTarget("mac", "haxe:mac", "app")
+	customTarget("android", "haxe:android", "apk")
+	customTarget("ios", "haxe:ios", "ipa")
+	customTarget("tizen", "haxe:tizen", "app")
+	customTargetMinimized("html5", "haxe:html5", "js")
+}
