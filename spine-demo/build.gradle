@@ -1,0 +1,71 @@
+apply plugin: "java"
+apply plugin: 'application'
+apply plugin: "jtransc"
+
+//mainClassName = "com.esotericsoftware.spine.SimpleTest1"
+mainClassName = "com.esotericsoftware.spine.NormalMapTest"
+
+sourceSets.main {
+	java {
+		srcDirs = [
+			'spine-runtimes/spine-libgdx/spine-libgdx/src',
+			'spine-runtimes/spine-libgdx/spine-libgdx-tests/src'
+		]
+	}
+	resources {
+		srcDir 'spine-runtimes/spine-libgdx/spine-libgdx-tests/assets'
+	}
+}
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	jtransc "com.jtransc.gdx:gdx-backend-jtransc:$jtranscVersion" // just included when compiling using jtransc and before other dependencies
+
+	compile "com.jtransc:jtransc-rt-core:$jtranscVersion"
+	compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$libgdxVersion"
+	compile "com.badlogicgames.gdx:gdx-platform:$libgdxVersion:natives-desktop"
+	compile "com.badlogicgames.gdx:gdx-box2d:$libgdxVersion"
+
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jtransc {
+	title = "SpineSimpleTest1"
+	name = "SpineSimpleTest1"
+	version = "0.0.1"
+	company = "jtransc"
+	package_ = "com.jtransc.gdx.examples"
+	embedResources = true
+	assets = [
+		// @TODO: fix this!
+		"spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
+		//"C:\\projects\\spine-runtimes\\spine-libgdx\\spine-libgdx-tests\\assets"
+	]
+	vsync = true
+	relooper = true
+	minimizeNames = false
+	analyzer = false
+
+	customTarget("cpp", "haxe:cpp", "exe")
+	customTarget("windows", "haxe:windows", "exe")
+	customTarget("linux", "haxe:linux", "bin")
+	customTarget("mac", "haxe:mac", "app")
+	customTarget("android", "haxe:android", "apk")
+	customTarget("ios", "haxe:ios", "ipa")
+	customTarget("tizen", "haxe:tizen", "app")
+	customTargetMinimized("html5", "haxe:html5", "js")
+}
