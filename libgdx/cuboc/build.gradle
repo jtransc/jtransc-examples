@@ -1,0 +1,155 @@
+apply plugin: "java"
+apply plugin: 'application'
+apply plugin: "jtransc"
+
+mainClassName = "com.badlogic.cubocy.CubocDesktop"
+
+sourceSets.main {
+	java {
+		srcDirs = [
+            'libgdx-demo-cuboc/core/src',
+            'libgdx-demo-cuboc/desktop/src' //emulates lwjgl
+        ]
+	}
+	resources {
+		srcDir 'libgdx-demo-cuboc/android/assets'
+	}
+}
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	jtransc "com.jtransc.gdx:gdx-backend-jtransc:$jtranscVersion"
+	compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$libgdxVersion"
+	compile "com.badlogicgames.gdx:gdx-platform:$libgdxVersion:natives-desktop"
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jtransc {
+	// Optional properties (https://github.com/jtransc/jtransc/blob/master/jtransc-gradle-plugin/src/com/jtransc/gradle/JTranscExtension.kt)
+	title = "Cuboc"
+	name = "Cuboc"
+	version = "0.0.1"
+	company = "Badlogic"
+	package_ = "com.jtransc.gdx.examples"
+	// target = "haxe:js"
+	// output: String? = null
+	// extra = hashMapOf<String?, String?>()
+	embedResources = true
+	// libraries = arrayListOf<String>()
+	assets = ['libgdx-demo-cuboc/android/assets']
+	// debug = true
+	// initialWidth = 1280
+	// initialHeight = 720
+	vsync = true
+	// resizable = true
+	// borderless = false
+	// fullscreen = false
+	// icon: String? = null
+	// orientation = "auto"
+	relooper = true
+	minimizeNames = false
+	analyzer = false
+
+	customTarget("cpp", "haxe:cpp", "exe")
+	customTarget("windows", "haxe:windows", "exe")
+	customTarget("linux", "haxe:linux", "bin")
+	customTarget("mac", "haxe:mac", "app")
+	customTarget("android", "haxe:android", "apk")
+	customTarget("ios", "haxe:ios", "ipa")
+	customTarget("tizen", "haxe:tizen", "app")
+	customTargetMinimized("html5", "haxe:html5", "js")
+}
+
+// Defined tasks
+
+// Building tasks:
+// - distribution:distCpp
+// - distribution:distJs
+// - distribution:distNeko
+// - distribution:distPhp
+
+// Building and running tasks:
+// - distribution:runCpp
+// - distribution:runNeko
+// - distribution:runNodeJs
+// - distribution:runPhp
+// - distribution:runSwd
+
+// Custom Building/running tasks:
+// - jtransc:distJtransc (must specify target and outputFile options)
+// - jtransc:runJtransc (must specify target and outputFile options)
+
+/*
+import com.jtransc.gradle.tasks.JTranscDistTask
+import com.jtransc.gradle.tasks.JTranscRunTask
+
+task distWindows(type: JTranscDistTask) {
+	target = "haxe:windows"
+	outputFile = "program.exe"
+	minimizedNames = false
+	debug = false
+}
+
+task runWindows(type: JTranscRunTask) {
+	target = "haxe:windows"
+	outputFile = "program.exe"
+	minimizedNames = false
+	debug = true
+}
+
+task distHtml(type: JTranscDistTask) {
+	target = "haxe:js"
+	outputFile = "program.js"
+	minimizedNames = true
+	debug = false
+}
+
+task runHtml(type: JTranscRunTask) {
+	target = "haxe:js"
+	outputFile = "program.js"
+	minimizedNames = false
+	debug = true
+}
+
+task distAndroid(type: JTranscDistTask) {
+	target = "haxe:android"
+	outputFile = "program.apk"
+	minimizedNames = true
+	debug = false
+}
+
+task runAndroid(type: JTranscRunTask) {
+	target = "haxe:android"
+	outputFile = "program.apk"
+	minimizedNames = false
+	debug = true
+}
+
+task distIos(type: JTranscDistTask) {
+	target = "haxe:ios"
+	outputFile = "program.ipa"
+	minimizedNames = true
+	debug = false
+}
+
+task runIos(type: JTranscRunTask) {
+	target = "haxe:ios"
+	outputFile = "program.ipa"
+	minimizedNames = false
+	debug = true
+}
+*/

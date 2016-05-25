@@ -1,3 +1,6 @@
 [submodule "spine-demo/spine-runtimes"]
 	path = spine-demo/spine-runtimes
 	url = https://github.com/EsotericSoftware/spine-runtimes.git
+[submodule "libgdx/cuboc/libgdx-demo-cuboc"]
+	path = libgdx/cuboc/libgdx-demo-cuboc
+	url = https://github.com/libgdx/libgdx-demo-cuboc.git
