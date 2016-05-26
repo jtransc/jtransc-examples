@@ -21,7 +21,7 @@
     <parent>
         <groupId>com.jtransc.examples</groupId>
         <artifactId>jtransc-examples</artifactId>
-        <version>0.2.7</version>
+        <version>0.2.8</version>
         <relativePath>..</relativePath>
     </parent>
 

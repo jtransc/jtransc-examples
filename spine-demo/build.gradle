@@ -2,14 +2,16 @@ apply plugin: "java"
 apply plugin: 'application'
 apply plugin: "jtransc"
 
-//mainClassName = "com.esotericsoftware.spine.SimpleTest1"
-mainClassName = "com.esotericsoftware.spine.NormalMapTest"
+mainClassName = "com.esotericsoftware.spine.SimpleTest1"
+//mainClassName = "com.esotericsoftware.spine.NormalMapTest"
+//mainClassName = "NormalMapTestIgnoreArgs"
 
 sourceSets.main {
 	java {
 		srcDirs = [
 			'spine-runtimes/spine-libgdx/spine-libgdx/src',
-			'spine-runtimes/spine-libgdx/spine-libgdx-tests/src'
+			'spine-runtimes/spine-libgdx/spine-libgdx-tests/src',
+			'src',
 		]
 	}
 	resources {
@@ -53,7 +55,6 @@ jtransc {
 	assets = [
 		// @TODO: fix this!
 		"spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
-		//"C:\\projects\\spine-runtimes\\spine-libgdx\\spine-libgdx-tests\\assets"
 	]
 	vsync = true
 	relooper = true
