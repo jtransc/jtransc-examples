@@ -9,4 +9,5 @@ sed -i -e "s/jtranscVersion=\(.*\)/jtranscVersion=$1/g" libgdx/invaders/gradle.p
 sed -i -e "s/jtranscVersion=\(.*\)/jtranscVersion=$1/g" libgdx/metagun/gradle.properties
 sed -i -e "s/jtranscVersion=\(.*\)/jtranscVersion=$1/g" libgdx/vector-pinball/gradle.properties
 sed -i -e "s/jtranscVersion=\(.*\)/jtranscVersion=$1/g" spine-demo/gradle.properties
+sed -i -e "s/jtranscVersion=\(.*\)/jtranscVersion=$1/g" hello-world/gradle.properties
 mvn versions:set -DnewVersion=$1

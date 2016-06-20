@@ -4,5 +4,8 @@
 *.iws
 *.swf
 /*/target
+/hello-world/build
+/hello-world/target
 *.log
 *.versionsBackup
+.gradle

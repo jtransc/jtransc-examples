@@ -1,0 +1,33 @@
+apply plugin: "java"
+apply plugin: 'application'
+apply plugin: "jtransc"
+
+mainClassName = "example.Test"
+
+sourceSets.main {
+	java {
+		srcDirs = [
+            'src',
+        ]
+	}
+}
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile "com.jtransc:jtransc-rt-core:$jtranscVersion"
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}

@@ -37,7 +37,6 @@ dependencies {
 
 	compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$libgdxVersion"
 	compile "com.badlogicgames.gdx:gdx-platform:$libgdxVersion:natives-desktop"
-    //compile "com.badlogicgames.gdx:gdx-box2d-gwt:$libgdxVersion"
     compile "com.badlogicgames.gdx:gdx-box2d:$libgdxVersion"
 	compile "com.badlogicgames.gdx:gdx-box2d-platform:$libgdxVersion:natives-desktop"
 
@@ -45,7 +44,6 @@ dependencies {
 }
 
 jtransc {
-	// Optional properties (https://github.com/jtransc/jtransc/blob/master/jtransc-gradle-plugin/src/com/jtransc/gradle/JTranscExtension.kt)
 	title = "Vector Pinball"
 	name = "VectorPinball"
 	version = "0.0.1"
@@ -66,4 +64,5 @@ jtransc {
 	customTarget("ios", "haxe:ios", "ipa")
 	customTarget("tizen", "haxe:tizen", "app")
 	customTargetMinimized("html5", "haxe:html5", "js")
+	customTargetMinimized("plainHtml5", "js", "js")
 }
