@@ -1,7 +1,7 @@
 package com.jtransc.examples.tictactoe
 
+import com.jtransc.experimental.kotlin.JTranscKotlinReflectStripper
 import com.jtransc.game.JTranscGame
-import com.jtransc.kotlin.JTranscKotlinReflectStripper
 import com.jtransc.media.libgdx.JTranscLibgdx
 import com.jtransc.media.lime.JTranscLime
 
