@@ -31,3 +31,10 @@ dependencies {
 	compile "com.jtransc:jtransc-rt-core:$jtranscVersion"
 	testCompile group: 'junit', name: 'junit', version: '4.+'
 }
+
+jtransc {
+//	treeshaking = false
+//	minimizeNames = false
+	treeshaking = true
+//	minimizeNames = false
+}
