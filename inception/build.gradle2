@@ -63,7 +63,6 @@ jtransc {
 	relooper = true
 	minimizeNames = false
 	analyzer = false
-	treeshaking = true
 
 	customTarget("cpp", "haxe:cpp", "exe")
 	customTarget("windows", "haxe:windows", "exe")
