@@ -1,11 +1,12 @@
-Generates a `program.swf` and a `program.js` file with a simple hello world application
+You can execute:
 
-In order for this to work you must install maven and haxe.
+For available tasks:
+`gradle tasks`
 
-You can install haxe from here: [http://haxe.org/download/](http://haxe.org/download/)
+For JS (with nodejs installed):
+`gradle runJs`
 
-```
-mvn package
-```
+For D (with dmd/gdc/ldc installed):
+`gradle runD`
 
-Output will be at `target/program.swf` and `target/program.js` 
+It will generate build/jtransc-d folder with program.d and the executable.
