@@ -59,10 +59,10 @@ jtransc {
 	]
 	vsync = true
 	relooper = true
-	//minimizeNames = true
-	minimizeNames = false
 	analyzer = false
 	treeshaking = true
+	minimizeNames = true
+//	minimizeNames = false
 
 	customTarget("cpp", "haxe:cpp", "exe")
 	customTarget("windows", "haxe:windows", "exe")

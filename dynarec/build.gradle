@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.jtransc:jtransc-gradle-plugin:${jtranscVersion}"
+    }
+}
+
+apply plugin: "java"
+apply plugin: 'application'
+apply plugin: "jtransc"
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+mainClassName = "BrainfuckDynarec"
+
+group = "com.jtransc"
+version = "${jtranscVersion}"
+
+sourceSets {
+    main.java.srcDirs = [ 'src' ]
+    main.resources.srcDirs = [ 'resources' ]
+    test.java.srcDirs = [ 'test' ]
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.jtransc:jtransc-rt-core:${jtranscVersion}"
+    compile "com.jtransc:jtransc-dynarec:${jtranscVersion}"
+    testCompile 'junit:junit:4.12'
+}
