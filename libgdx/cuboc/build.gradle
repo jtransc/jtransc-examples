@@ -61,6 +61,7 @@ jtransc {
 	// icon: String? = null
 	// orientation = "auto"
 	relooper = true
+	//minimizeNames = true
 	minimizeNames = false
 	analyzer = false
 	treeshaking = true

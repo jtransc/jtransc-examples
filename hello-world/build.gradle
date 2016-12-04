@@ -36,5 +36,5 @@ jtransc {
 //	treeshaking = false
 //	minimizeNames = false
 	treeshaking = true
-//	minimizeNames = false
+//	minimizeNames = true
 }

@@ -52,14 +52,17 @@ jtransc {
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
 	embedResources = true
+	//embedResources = false
 	assets = [
 		// @TODO: fix this!
 		"spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
 	]
 	vsync = true
 	relooper = true
+	//minimizeNames = true
 	minimizeNames = false
 	analyzer = false
+	treeshaking = true
 
 	customTarget("cpp", "haxe:cpp", "exe")
 	customTarget("windows", "haxe:windows", "exe")

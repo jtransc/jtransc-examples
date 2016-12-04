@@ -1,0 +1,49 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+
+
+apply plugin: "java"
+apply plugin: "kotlin"
+apply plugin: 'application'
+apply plugin: "jtransc"
+
+mainClassName = "com.jtransc.examples.tictactoe.TicTacToeGdx"
+
+sourceSets {
+	main.java.srcDirs = [ 'src' ]
+	main.resources.srcDirs = [ 'resources', 'assets' ]
+	test.java.srcDirs = [ 'test' ]
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile "com.jtransc:jtransc-rt-core:$jtranscVersion"
+	compile "com.jtransc.media:jtransc-media-core:$jtranscVersion"
+	compile "com.jtransc.media:jtransc-media-game:$jtranscVersion"
+	compile "com.jtransc.media:jtransc-media-libgdx:$jtranscVersion"
+	compile "com.jtransc.media:jtransc-media-lime:$jtranscVersion"
+	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+	compile "org.jetbrains.kotlin:kotlin-runtime:$kotlinVersion"
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jtransc {
+	assets = ['assets']
+	mainClassName = 'com.jtransc.examples.tictactoe.TicTacToeTransc'
+	treeshaking = true
+//	minimizeNames = true
+//	treeshaking = false
+	minimizeNames = false
+}

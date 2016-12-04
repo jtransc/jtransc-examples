@@ -53,8 +53,9 @@ jtransc {
 	assets = ['libgdx-demo-vector-pinball/android/assets']
 	vsync = true
 	relooper = true
-	minimizeNames = false
-	analyzer = false
+	minimizeNames = true
+	analyzer = true
+	treeshaking = true
 
 	customTarget("cpp", "haxe:cpp", "exe")
 	customTarget("windows", "haxe:windows", "exe")
