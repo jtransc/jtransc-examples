@@ -1,24 +1,22 @@
+plugins {
+  id "com.jtransc" version "0.5.1"
+}
+
 apply plugin: "java"
 apply plugin: 'application'
-apply plugin: "jtransc"
 
 mainClassName = "example.Test"
+
+jtransc {
+	treeshaking = true
+	minimizeNames = true
+}
 
 sourceSets.main {
 	java {
 		srcDirs = [
             'src',
         ]
-	}
-}
-
-buildscript {
-	repositories {
-		mavenLocal()
-		mavenCentral()
-	}
-	dependencies {
-		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
 	}
 }
 
