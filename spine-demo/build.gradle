@@ -73,3 +73,7 @@ jtransc {
 	customTarget("tizen", "haxe:tizen", "app")
 	customTargetMinimized("html5", "haxe:html5", "js")
 }
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.4.1'
+}
