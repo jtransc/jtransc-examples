@@ -1,5 +1,5 @@
 plugins {
-  id "com.jtransc" version "0.5.1"
+  id "com.jtransc" version "0.5.12"
 }
 
 apply plugin: "java"
@@ -9,7 +9,7 @@ mainClassName = "example.Test"
 
 jtransc {
 	treeshaking = true
-	minimizeNames = true
+	minimizeNames = false
 }
 
 sourceSets.main {
@@ -35,4 +35,8 @@ jtransc {
 //	minimizeNames = false
 	treeshaking = true
 //	minimizeNames = true
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.4.1'
 }
