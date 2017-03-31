@@ -1,7 +1,11 @@
 You can execute:
 
-For JS (with nodejs installed):
-`gradlew runJs` status n/a
+`gradlew clean`
 
-For D (with dmd/gdc/ldc installed):
-`gradlew runD`
+For generate application:
+`gradlew gensrcHaxeCpp`
+`gradlew distHaxeCpp`
+
+For run application:
+`gradlew debugHaxeCpp`
+`gradlew runHaxeCpp`
