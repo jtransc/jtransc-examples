@@ -1,9 +1,16 @@
-plugins {
-  id "com.jtransc" version "0.5.12"
-}
-
 apply plugin: "java"
 apply plugin: 'application'
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+apply plugin: 'jtransc'
 
 mainClassName = "example.Test"
 
