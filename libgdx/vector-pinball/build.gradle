@@ -67,3 +67,7 @@ jtransc {
 	customTargetMinimized("html5", "haxe:html5", "js")
 	customTargetMinimized("plainHtml5", "js", "js")
 }
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.5'
+}
