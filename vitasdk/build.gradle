@@ -19,12 +19,9 @@ jtransc {
 	minimizeNames = false
 }
 
-sourceSets.main {
-	java {
-		srcDirs = [
-            'src',
-        ]
-	}
+sourceSets {
+	main.java.srcDirs = [ 'src', ]
+	main.resources.srcDirs = [ 'resources', ]
 }
 
 repositories {

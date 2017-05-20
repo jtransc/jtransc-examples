@@ -1,9 +1,7 @@
 package example;
 
-import com.jtransc.annotation.JTranscAddDefines;
-import com.jtransc.annotation.JTranscAddHeader;
-import com.jtransc.annotation.JTranscAddLibraries;
-import com.jtransc.annotation.JTranscAddTemplateVars;
+import com.jtransc.annotation.*;
+import com.jtransc.target.Cpp;
 
 @JTranscAddTemplateVars(variable = "CMAKE", target = "cpp", list = {
         "if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)",
@@ -46,6 +44,7 @@ import com.jtransc.annotation.JTranscAddTemplateVars;
         "#include <psp2/types.h>",
         //"#include <psp2/moduleinfo.h>",
         "#include <psp2/kernel/processmgr.h>",
+        "#include \"debugScreen.h\"",
         //"#include <vita2d.h>",
         "}",
         "#define SCREEN_W 960",
@@ -56,10 +55,15 @@ import com.jtransc.annotation.JTranscAddTemplateVars;
         "static SceCtrlData pad = {0};",
         "static SceTouchData touch = {0};",
 })
+@JTranscAddFile(target = "cpp", priority = -1, process = true, src = "debugScreen.h", dst = "debugScreen.h")
+@JTranscAddFile(target = "cpp", priority = -1, process = true, src = "debugScreenFont.c", dst = "debugScreenFont.c")
 @JTranscAddDefines(target = "cpp", value = "DISABLE_BOEHM_GC")
 @JTranscAddLibraries(target = "cpp", value = {"pthread"})
+@JTranscAddLibraries(target = "cpp", value = {"SceDisplay_stub"})
 public class VitaSdk {
     static public void init() {
-
+        Cpp.v_raw("psvDebugScreenInit();");
+        Cpp.v_raw("psvDebugScreenPrintf(\"Welcome to the psvDebugScreen showcase !\");");
+        Cpp.v_raw("sceKernelDelayThread(1000*1000);");
     }
 }
