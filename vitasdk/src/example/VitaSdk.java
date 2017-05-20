@@ -1,7 +1,6 @@
 package example;
 
 import com.jtransc.annotation.*;
-import com.jtransc.target.Cpp;
 
 @JTranscAddTemplateVars(variable = "CMAKE", target = "cpp", list = {
         "if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)",
@@ -62,8 +61,23 @@ import com.jtransc.target.Cpp;
 @JTranscAddLibraries(target = "cpp", value = {"SceDisplay_stub"})
 public class VitaSdk {
     static public void init() {
-        Cpp.v_raw("psvDebugScreenInit();");
-        Cpp.v_raw("psvDebugScreenPrintf(\"Welcome to the psvDebugScreen showcase !\");");
-        Cpp.v_raw("sceKernelDelayThread(1000*1000);");
+        Global.psvDebugScreenInit();
+        //Cpp.v_raw("psvDebugScreenInit();");
+        //Cpp.v_raw("psvDebugScreenPrintf(\"Welcome to the psvDebugScreen showcase !\");");
+        GlobalTools.psvDebugScreenPrintf("Welcome to the psvDebugScreen showcase in JAVA!");
+        Global.sceKernelDelayThread(1000 * 1000);
+    }
+
+    @JTranscNativeName(target = "cpp", value = "")
+    static public class Global {
+        native static public void psvDebugScreenInit();
+
+        native static public void sceKernelDelayThread(long microseconds);
+    }
+
+    static public class GlobalTools {
+        @JTranscMethodBody(target = "cpp", value = "psvDebugScreenPrintf(N::istr3(p0).c_str());")
+        native static public void psvDebugScreenPrintf(String str);
     }
 }
+
