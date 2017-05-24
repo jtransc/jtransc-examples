@@ -1,0 +1,46 @@
+apply plugin: "java"
+apply plugin: 'application'
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+apply plugin: 'jtransc'
+
+mainClassName = "example.Test"
+
+jtransc {
+	treeshaking = true
+	minimizeNames = false
+}
+
+sourceSets {
+	main.java.srcDirs = [ 'src', ]
+	main.resources.srcDirs = [ 'resources', ]
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile "com.jtransc:jtransc-rt-core:$jtranscVersion"
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jtransc {
+//	treeshaking = false
+//	minimizeNames = false
+	treeshaking = true
+//	minimizeNames = true
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.5'
+}
