@@ -51,8 +51,8 @@ jtransc {
 	version = "0.0.1"
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
-	embedResources = true
-	//embedResources = false
+//	embedResources = true
+	embedResources = false
 	assets = [
 		// @TODO: fix this!
 		"spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
