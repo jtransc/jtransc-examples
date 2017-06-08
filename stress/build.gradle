@@ -1,0 +1,63 @@
+apply plugin: "java"
+apply plugin: 'application'
+apply plugin: "jtransc"
+
+mainClassName = "com.test.StressTest"
+
+sourceSets.main {
+	java {
+		srcDir "spine-runtimes/spine-libgdx/spine-libgdx/src"
+	}
+	resources {
+		srcDir "spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
+	}
+}
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath "com.jtransc:jtransc-gradle-plugin:$jtranscVersion"
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	jtransc "com.jtransc.gdx:gdx-backend-jtransc:$jtranscVersion" // just included when compiling using jtransc and before other dependencies
+
+	compile "com.jtransc:jtransc-rt-core:$jtranscVersion"
+	compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$libgdxVersion"
+	compile "com.badlogicgames.gdx:gdx-platform:$libgdxVersion:natives-desktop"
+	compile "com.badlogicgames.gdx:gdx-box2d:$libgdxVersion"
+
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jtransc {
+	title = "StressTest"
+	name = "StressTest"
+	version = "0.0.1"
+	company = "jtransc"
+	package_ = "com.jtransc.gdx.examples"
+	embedResources = false
+	assets = [
+		"spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
+	]
+	vsync = true
+	relooper = true
+	analyzer = false
+	treeshaking = true
+	minimizeNames = true
+
+	customTarget("ios", "haxe:ios", "ipa")
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.4.1'
+}
