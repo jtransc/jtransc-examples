@@ -53,18 +53,24 @@ import com.jtransc.annotation.*;
         "static int cur_fb = 0;",
         "static SceCtrlData pad = {0};",
         "static SceTouchData touch = {0};",
+        "int _newlib_heap_size_user = 256 * 1024 * 1024;",
 })
 @JTranscAddFile(target = "cpp", priority = -1, process = true, src = "debugScreen.h", dst = "debugScreen.h")
 @JTranscAddFile(target = "cpp", priority = -1, process = true, src = "debugScreenFont.c", dst = "debugScreenFont.c")
-@JTranscAddDefines(target = "cpp", value = "DISABLE_BOEHM_GC")
+//@JTranscAddDefines(target = "cpp", value = "DISABLE_BOEHM_GC")
+@JTranscAddDefines(target = "cpp", value = "USE_PORTABLE_GC")
 @JTranscAddLibraries(target = "cpp", value = {"pthread"})
 @JTranscAddLibraries(target = "cpp", value = {"SceDisplay_stub"})
 public class VitaSdk {
     static public void init() {
         Global.psvDebugScreenInit();
-        //Cpp.v_raw("psvDebugScreenInit();");
-        //Cpp.v_raw("psvDebugScreenPrintf(\"Welcome to the psvDebugScreen showcase !\");");
-        GlobalTools.psvDebugScreenPrintf("Welcome to the psvDebugScreen showcase in JAVA!");
+
+        for (int m = 0; m < 2000; m++) {
+            GlobalTools.psvDebugScreenPrintf("Welcome to the psvDebugScreen showcase in JAVA! " + m);
+            int[] ints = new int[1024 * 1024];
+            final int len = ints.length;
+            for (int n = 0; n < len; n++) ints[n]++;
+        }
         Global.sceKernelDelayThread(1000 * 1000);
     }
 
