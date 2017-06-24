@@ -62,6 +62,5 @@ jtransc {
 	customTarget("mac", "haxe:mac", "app")
 	customTarget("android", "haxe:android", "apk")
 	customTarget("ios", "haxe:ios", "ipa")
-	customTarget("tizen", "haxe:tizen", "app")
 	customTargetMinimized("html5", "haxe:html5", "js")
 }
