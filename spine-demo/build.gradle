@@ -64,6 +64,15 @@ jtransc {
 	minimizeNames = true
 //	minimizeNames = false
 
+    // icon
+    icon = file("icons/icon.png").path
+    param("androidIcon", file("icons/android.png").path)
+    param("iosIcon", file("icons/ios.png").path)
+
+    // iOS
+    param("prerenderedIcon", "true")
+    param("deploymentVersion", "8.0")
+
 	customTarget("cpp", "haxe:cpp", "exe")
 	customTarget("windows", "haxe:windows", "exe")
 	customTarget("linux", "haxe:linux", "bin")
