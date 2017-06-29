@@ -71,8 +71,8 @@ jtransc {
     appendVar("androidIcons", file("icons/android.png").path)
 	appendVar("iosIcons", file("icons/ios.png").path)
 
-	param("fps", "45")
-	param("showFPS", "false")
+	param("fps", "1000")
+	param("showFPS", "true")
 
     // iOS
     param("prerenderedIcon", "false")
