@@ -84,6 +84,7 @@ jtransc {
 //	param("certificate_team_id", "SK12FH34")
     param("prerenderedIcon", "false")
     param("deploymentVersion", "8.0")
+    param("ios_devices", "universal") // ipad iphone
 	file("splash-screens").eachFile (FileType.FILES) { file ->
 		appendVar("splashScreens", file.path)
 	}
