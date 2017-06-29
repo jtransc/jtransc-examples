@@ -53,13 +53,19 @@ jtransc {
 	version = "0.0.1"
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
+	initialWidth = 800
+	initialHeight = 800
+	fullscreen = true
+    resizable = false
+	borderless = true
+	orientation = "landscape"
+	vsync = true
 //	embedResources = true
 	embedResources = false
 	assets = [
 		// @TODO: fix this!
 		"spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
 	]
-	vsync = true
 	relooper = true
 	analyzer = false
 	treeshaking = true
