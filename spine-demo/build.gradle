@@ -81,6 +81,7 @@ jtransc {
 	param("showFPS", "true")
 
     // iOS
+//	param("certificate_team_id", "SK12FH34")
     param("prerenderedIcon", "false")
     param("deploymentVersion", "8.0")
 	file("splash-screens").eachFile (FileType.FILES) { file ->
