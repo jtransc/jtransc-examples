@@ -55,7 +55,7 @@ jtransc {
 	package_ = "com.jtransc.gdx.examples"
 	initialWidth = 800
 	initialHeight = 800
-	fullscreen = true
+	fullscreen = false
     resizable = false
 	borderless = true
 	orientation = "landscape"
