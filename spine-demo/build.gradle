@@ -1,3 +1,5 @@
+import groovy.io.FileType
+
 apply plugin: "java"
 apply plugin: 'application'
 apply plugin: "jtransc"
@@ -66,12 +68,18 @@ jtransc {
 
     // icon
     icon = file("icons/icon.png").path
-    param("androidIcon", file("icons/android.png").path)
-    param("iosIcon", file("icons/ios.png").path)
+    appendVar("androidIcons", file("icons/android.png").path)
+	appendVar("iosIcons", file("icons/ios.png").path)
+
+	param("fps", "45")
+	param("showFPS", "false")
 
     // iOS
-    param("prerenderedIcon", "true")
+    param("prerenderedIcon", "false")
     param("deploymentVersion", "8.0")
+	file("splash-screens").eachFile (FileType.FILES) { file ->
+		appendVar("splashScreens", file.path)
+	}
 
 	customTarget("cpp", "haxe:cpp", "exe")
 	customTarget("windows", "haxe:windows", "exe")
