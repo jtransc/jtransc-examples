@@ -1,3 +1,5 @@
+import groovy.io.FileType
+
 apply plugin: "java"
 apply plugin: 'application'
 apply plugin: "jtransc"
@@ -51,13 +53,19 @@ jtransc {
 	version = "0.0.1"
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
+	initialWidth = 1200
+	initialHeight = 800
+	fullscreen = false
+    resizable = true
+	borderless = false
+	orientation = "landscape"
+	vsync = true
 //	embedResources = true
 	embedResources = false
 	assets = [
 		// @TODO: fix this!
 		"spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
 	]
-	vsync = true
 	relooper = true
 	analyzer = false
 	treeshaking = true
@@ -66,12 +74,20 @@ jtransc {
 
     // icon
     icon = file("icons/icon.png").path
-    param("androidIcon", file("icons/android.png").path)
-    param("iosIcon", file("icons/ios.png").path)
+    appendVar("androidIcons", file("icons/android.png").path)
+	appendVar("iosIcons", file("icons/ios.png").path)
+
+	param("fps", "1000")
+	param("showFPS", "true")
 
     // iOS
-    param("prerenderedIcon", "true")
+//	param("certificate_team_id", "SK12FH34")
+    param("prerenderedIcon", "false")
     param("deploymentVersion", "8.0")
+    param("ios_devices", "universal") // ipad iphone
+	file("splash-screens").eachFile (FileType.FILES) { file ->
+		appendVar("splashScreens", file.path)
+	}
 
 	customTarget("cpp", "haxe:cpp", "exe")
 	customTarget("windows", "haxe:windows", "exe")
