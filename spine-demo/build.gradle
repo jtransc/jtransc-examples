@@ -53,11 +53,11 @@ jtransc {
 	version = "0.0.1"
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
-	initialWidth = 800
+	initialWidth = 1200
 	initialHeight = 800
 	fullscreen = false
-    resizable = false
-	borderless = true
+    resizable = true
+	borderless = false
 	orientation = "landscape"
 	vsync = true
 //	embedResources = true
