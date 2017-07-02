@@ -53,8 +53,8 @@ jtransc {
 	version = "0.0.1"
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
-	initialWidth = 1200
-	initialHeight = 800
+	initialWidth = 640
+	initialHeight = 480
 	fullscreen = false
     resizable = true
 	borderless = false
@@ -84,7 +84,7 @@ jtransc {
 //	param("certificate_team_id", "SK12FH34")
     param("prerenderedIcon", "false")
     param("deploymentVersion", "8.0")
-    param("ios_devices", "universal") // ipad iphone
+    param("ios_device", "universal") // ipad iphone
 	file("splash-screens").eachFile (FileType.FILES) { file ->
 		appendVar("splashScreens", file.path)
 	}
