@@ -80,6 +80,8 @@ jtransc {
 	param("fps", "1000")
 	param("showFPS", "true")
 
+	param("debugLimeInput", "true")
+
     // iOS
 //	param("certificate_team_id", "SK12FH34")
     param("prerenderedIcon", "true")
