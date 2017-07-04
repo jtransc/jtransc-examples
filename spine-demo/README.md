@@ -1,11 +1,20 @@
-You can execute:
+For generate only:
+```
+./gradlew clean gensrcHaxecpp
+```
 
-`gradlew clean`
+For debug application:
+```
+./gradlew clean debugHaxecpp
+```
 
-For generate application:
-`gradlew gensrcHaxeCpp`
-`gradlew distHaxeCpp`
+For test on iPad/iPhone
+```
+./gradlew clean debugIos
+```
 
-For run application:
-`gradlew debugHaxeCpp`
-`gradlew runHaxeCpp`
+For make release app
+```
+./gradlew clean distHaxecpp
+./gradlew clean distIos
+```

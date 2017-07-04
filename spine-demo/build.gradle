@@ -53,8 +53,8 @@ jtransc {
 	version = "0.0.1"
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
-	initialWidth = 1200
-	initialHeight = 800
+	initialWidth = 640
+	initialHeight = 480
 	fullscreen = false
     resizable = true
 	borderless = false
@@ -80,11 +80,13 @@ jtransc {
 	param("fps", "1000")
 	param("showFPS", "true")
 
+	param("debugLimeInput", "true")
+
     // iOS
 //	param("certificate_team_id", "SK12FH34")
-    param("prerenderedIcon", "false")
-    param("deploymentVersion", "8.0")
-    param("ios_devices", "universal") // ipad iphone
+    param("prerenderedIcon", "true")
+    param("deploymentVersion", "9.0") // < iOS 9 have 60 MB limit for app (plus problem on since iOS 10.3.2)
+    param("ios_device", "universal") // ipad iphone
 	file("splash-screens").eachFile (FileType.FILES) { file ->
 		appendVar("splashScreens", file.path)
 	}
@@ -99,5 +101,5 @@ jtransc {
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '3.4.1'
+	gradleVersion = '4.0'
 }
