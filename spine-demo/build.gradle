@@ -59,7 +59,7 @@ jtransc {
     resizable = true
 	borderless = false
 	orientation = "landscape"
-	vsync = true
+	vsync = false // WARNING: if this true, then fps value will be ignored
 	embedResources = false
 	assets = [
 		// @TODO: fix this!
