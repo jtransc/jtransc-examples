@@ -90,6 +90,11 @@ jtransc {
 		appendVar("splashScreens", file.path)
 	}
 
+	// Android
+	param("androidTargetSdkVersion", "26")
+	param("androidInstallLocation", "preferExternal")
+	appendVar("androidPermissions", "com.android.vending.BILLING")
+
 	customTarget("cpp", "haxe:cpp", "exe")
 	customTarget("windows", "haxe:windows", "exe")
 	customTarget("linux", "haxe:linux", "bin")
