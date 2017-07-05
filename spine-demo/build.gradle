@@ -60,7 +60,6 @@ jtransc {
 	borderless = false
 	orientation = "landscape"
 	vsync = true
-//	embedResources = true
 	embedResources = false
 	assets = [
 		// @TODO: fix this!
@@ -69,8 +68,7 @@ jtransc {
 	relooper = true
 	analyzer = false
 	treeshaking = true
-	minimizeNames = true
-//	minimizeNames = false
+	minimizeNames = false
 
     // icon
     icon = file("icons/icon.png").path
@@ -80,7 +78,7 @@ jtransc {
 	param("fps", "1000")
 	param("showFPS", "true")
 
-	param("debugLimeInput", "true")
+	param("debugLimeInput", "false")
 
     // iOS
 //	param("certificate_team_id", "SK12FH34")
