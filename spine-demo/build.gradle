@@ -78,6 +78,7 @@ jtransc {
 	param("fps", "1000")
 	param("showFPS", "true")
 
+	param("debugLimeFiles", "false")
 	param("debugLimeInput", "false")
 
     // iOS
