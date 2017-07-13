@@ -77,6 +77,7 @@ jtransc {
 	param("fps", "1000")
 	param("showFPS", "true")
 
+	param("showDisplayInfo", "true")
 	param("showMemInfo", "true")
 
 	param("debugLimeFiles", "false")
