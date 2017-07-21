@@ -48,8 +48,8 @@ dependencies {
 }
 
 jtransc {
-	title = "SpineSimpleTest1"
-	name = "SpineSimpleTest1"
+	title = "SpineDemo"
+	name = "SpineDemo"
 	version = "0.0.1"
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
@@ -59,16 +59,16 @@ jtransc {
     resizable = true
 	borderless = false
 	orientation = "landscape"
+	param("allowHighDpi", "true")
 	vsync = false // WARNING: if this true, then fps value will be ignored
 	embedResources = false
 	assets = [
-		// @TODO: fix this!
 		"spine-runtimes/spine-libgdx/spine-libgdx-tests/assets"
 	]
 	relooper = true
-	analyzer = false
+	analyzer = true
 	treeshaking = true
-	minimizeNames = false
+	minimizeNames = true
 
     // icon
     icon = file("icons/icon.png").path
@@ -80,6 +80,7 @@ jtransc {
 	param("fps", "1000")
 	param("showFPS", "true")
 
+	param("showDisplayInfo", "true")
 	param("showMemInfo", "true")
 
 	param("debugLimeFiles", "false")
