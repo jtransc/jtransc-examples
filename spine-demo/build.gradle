@@ -85,6 +85,7 @@ jtransc {
 
 	param("debugLimeFiles", "false")
 	param("debugLimeInput", "false")
+	param("debugAudio", "false")
 
     // iOS
 //	param("certificate_team_id", "SK12FH34")
