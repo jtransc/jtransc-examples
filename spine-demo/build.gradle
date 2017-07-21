@@ -75,6 +75,8 @@ jtransc {
     appendVar("androidIcons", file("icons/android.png").path)
 	appendVar("iosIcons", file("icons/ios.png").path)
 
+	param("useLimeFileHandle", "true")
+
 	param("fps", "1000")
 	param("showFPS", "true")
 
