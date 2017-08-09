@@ -87,6 +87,9 @@ jtransc {
 	param("debugLimeInput", "false")
 	param("debugAudio", "false")
 
+	// Windows
+	param("windows_arch", "X86") // allowed X86 or X64
+
     // iOS
 //	param("certificate_team_id", "SK12FH34")
     param("prerenderedIcon", "true")
