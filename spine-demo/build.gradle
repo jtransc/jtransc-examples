@@ -47,10 +47,10 @@ dependencies {
 	testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
+def extraVersion = version
 jtransc {
 	title = "SpineDemo"
 	name = "SpineDemo"
-	version = "0.0.1"
 	company = "jtransc"
 	package_ = "com.jtransc.gdx.examples"
 	initialWidth = 640
@@ -69,6 +69,8 @@ jtransc {
 	analyzer = true
 	treeshaking = true
 	minimizeNames = true
+
+	param("version", extraVersion)
 
     // icon
     icon = file("icons/icon.png").path
