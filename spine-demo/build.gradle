@@ -96,7 +96,8 @@ jtransc {
 //	param("certificate_team_id", "SK12FH34")
     param("prerenderedIcon", "true")
     param("deploymentVersion", "9.0") // < iOS 9 have 60 MB limit for app (plus problem on since iOS 10.3.2)
-    param("ios_device", "universal") // ipad iphone
+	param("non_exempt_encryption", "true")
+	param("ios_device", "universal") // ipad iphone
 	file("splash-screens").eachFile (FileType.FILES) { file ->
 		appendVar("splashScreens", file.path)
 	}
